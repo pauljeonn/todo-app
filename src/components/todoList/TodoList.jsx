@@ -8,6 +8,7 @@ const TodoList = () => {
 			<TodoItem text="설거지하기" done={true} />
 			<TodoItem text="자바스크립트 공부하기" done={true} />
 			<TodoItem text="프로젝트 생성하기" done={true} />
+			<TodoItem text="분리수거하기" done={false} />
 		</div>
 	);
 };

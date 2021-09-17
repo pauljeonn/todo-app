@@ -1,14 +1,74 @@
 import React from 'react';
-import './todoItem.scss';
+import styled, { css } from 'styled-components';
+// import './todoItem.scss';
+
+const CheckCircle = styled.div`
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid gray;
+	font-size: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+	cursor: pointer;
+	${(props) =>
+		props.done &&
+		css`
+			border: 1px solid #0ca678;
+			color: #0ca678;
+		`}
+`;
+
+const Text = styled.div`
+	flex: 1;
+	font-size: 21px;
+	color: black;
+	${(props) =>
+		props.done &&
+		css`
+			color: lightgray;
+		`}
+`;
+
+const Remove = styled.div`
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: lightgray;
+	font-size: 24px;
+	cursor: pointer;
+	&:hover {
+		color: red;
+	}
+`;
+
+const TodoItemBlock = styled.div`
+	display: flex;
+	align-items: center;
+	padding-top: 12px;
+	padding-bottom: 12px;
+
+	&:hover {
+		${Remove} {
+			opacity: 1;
+		}
+	}
+`;
 
 const TodoItem = ({ id, done, text }) => {
 	return (
-		<div className="todo-item">
-			<div className="check-circle" done={done}></div>
-			<div className="text" done={done}>
-				{text}
-			</div>
-		</div>
+		<TodoItemBlock>
+			<CheckCircle done={done}>
+				{done && <i className="fas fa-check"></i>}
+			</CheckCircle>
+			<Text done={done}>{text}</Text>
+			<Remove>
+				<i className="fas fa-trash"></i>
+			</Remove>
+		</TodoItemBlock>
 	);
 };
 
