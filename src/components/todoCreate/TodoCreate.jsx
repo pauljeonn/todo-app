@@ -49,14 +49,37 @@ const CircleButton = styled.div`
 		`}
 `;
 
+const InsertFormPositioner = styled.div`
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+`;
+
+const InsertForm = styled.div`
+	background: lightgray;
+	padding: 32px;
+	padding-bottom: 72px;
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+	border-top: 1px solid gray;
+`;
+
 const TodoCreate = () => {
 	const [open, setOpen] = useState(false);
 	const onToggle = () => setOpen(!open);
 
 	return (
-		<CircleButton onClick={onToggle} open={open}>
-			<i className="fas fa-plus"></i>
-		</CircleButton>
+		<>
+			{open && (
+				<InsertFormPositioner>
+					<InsertForm>...</InsertForm>
+				</InsertFormPositioner>
+			)}
+			<CircleButton onClick={onToggle} open={open}>
+				<i className="fas fa-plus"></i>
+			</CircleButton>
+		</>
 	);
 };
 
