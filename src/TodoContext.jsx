@@ -1,5 +1,5 @@
 import { findRenderedComponentWithType } from 'react-dom/test-utils';
-import React, { useReducer } from 'react';
+import React, { createContext, useReducer, useContext } from 'react';
 
 const initialTodos = [
 	{
@@ -22,4 +22,26 @@ function todoReducer(state, action) {
 		default:
 			throw new Error(`Unhandled action type: ${action.type}`);
 	}
+}
+
+const TodoStateContext = createContext();
+const TodoDispatchContext = createContext();
+
+export function TodoProvider({ children }) {
+	const [state, dispatch] = useReducer(todoReducer, initialTodos);
+	return (
+		<TodoStateContext.provider value={state}>
+			<TodoDispatchContext.Provider value={dispatch}>
+				{children}
+			</TodoDispatchContext.Provider>
+		</TodoStateContext.provider>
+	);
+}
+
+export function useTodoState() {
+	return useContext(TodoStateContext);
+}
+
+export function useTodoDispatch() {
+	return useContext(TodoDispatchContext);
 }
