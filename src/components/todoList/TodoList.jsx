@@ -1,8 +1,12 @@
 import React from 'react';
+import { useTodoState } from '../../TodoContext';
 import TodoItem from '../todoItem/TodoItem';
 import './todoList.scss';
 
 const TodoList = () => {
+	const state = useTodoState();
+	console.log(state);
+
 	return (
 		<div className="todo-list">
 			<TodoItem text="설거지하기" done={true} />
