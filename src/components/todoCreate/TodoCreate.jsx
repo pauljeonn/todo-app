@@ -1,4 +1,3 @@
-import { buildQueries } from '@testing-library/dom';
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -79,6 +78,7 @@ const TodoCreate = () => {
 	const [open, setOpen] = useState(false);
 	const onToggle = () => setOpen(!open);
 
+	// const nextId = useTodoNextId();
 	return (
 		<>
 			{open && (

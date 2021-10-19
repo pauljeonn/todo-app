@@ -5,7 +5,6 @@ import './todoList.scss';
 
 const TodoList = () => {
 	const state = useTodoState();
-	console.log(state);
 
 	return (
 		<div className="todo-list">
