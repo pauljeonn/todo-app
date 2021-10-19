@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-// import './todoItem.scss';
+import { useTodoDispatch } from '../../TodoContext';
 
 const CheckCircle = styled.div`
 	width: 32px;
@@ -59,13 +59,27 @@ const TodoItemBlock = styled.div`
 `;
 
 const TodoItem = ({ id, done, text }) => {
+	const dispatch = useTodoDispatch();
+
+	const onToggle = () =>
+		dispatch({
+			type: 'TOGGLE',
+			id,
+		});
+
+	const onRemove = () =>
+		dispatch({
+			type: 'REMOVE',
+			id,
+		});
+
 	return (
 		<TodoItemBlock>
-			<CheckCircle done={done}>
+			<CheckCircle done={done} onClick={onToggle}>
 				{done && <i className="fas fa-check"></i>}
 			</CheckCircle>
 			<Text done={done}>{text}</Text>
-			<Remove>
+			<Remove onClick={onRemove}>
 				<i className="fas fa-trash"></i>
 			</Remove>
 		</TodoItemBlock>
