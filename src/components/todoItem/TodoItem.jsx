@@ -6,7 +6,7 @@ const CheckCircle = styled.div`
 	width: 32px;
 	height: 32px;
 	border-radius: 50%;
-	border: 1px solid gray;
+	border: 2px solid #2473e7;
 	font-size: 24px;
 	display: flex;
 	align-items: center;
@@ -16,8 +16,8 @@ const CheckCircle = styled.div`
 	${(props) =>
 		props.done &&
 		css`
-			border: 1px solid #0ca678;
-			color: #0ca678;
+			border: 2px solid #2473e7;
+			color: #2473e7;
 		`}
 `;
 

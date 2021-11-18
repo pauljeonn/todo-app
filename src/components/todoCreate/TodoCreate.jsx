@@ -3,29 +3,27 @@ import styled, { css } from 'styled-components';
 import { useTodoDispatch, useTodoNextId } from '../../TodoContext';
 
 const CircleButton = styled.div`
-	background: #0ca678;
+	background: #2473e7;
 	z-index: 5;
 	cursor: pointer;
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	position: absolute;
-	left: 50%;
-	bottom: 0px;
+	right: -2%;
+	bottom: 8%;
 	transform: translate(-50%, 50%);
-
 	font-size: 45px;
 	color: white;
 	border-radius: 50%;
-
 	border: none;
 	outline: none;
+	box-shadow: 2px 2px 10px gray;
 
 	&:hover {
-		background: #a2e3cf;
+		background: #709ee4;
 	}
 
 	&:active {
