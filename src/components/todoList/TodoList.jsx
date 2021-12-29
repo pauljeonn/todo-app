@@ -8,6 +8,8 @@ import { FaArrowLeft } from 'react-icons/fa';
 const TodoListContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 95px;
+	overflow-y: auto;
 `;
 
 const TodoToggle = styled.div`
@@ -26,8 +28,8 @@ const TodoToggle = styled.div`
 `;
 
 const TodoListBlock = styled.div`
-	padding: 20px 32px;
-	padding-bottom: 88px;
+	padding: 20px 40px;
+	padding-bottom: 20px;
 	overflow-y: auto;
 `;
 

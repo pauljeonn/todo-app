@@ -19,6 +19,12 @@ const CheckCircle = styled.div`
 			border: 2px solid #ff7f50;
 			color: #ff7f50; ;
 		`}
+
+	@media (max-width: 480px) {
+		width: 24px;
+		height: 24px;
+		font-size: 16px;
+	}
 `;
 
 const Text = styled.div`
@@ -30,6 +36,10 @@ const Text = styled.div`
 		css`
 			color: lightgray;
 		`}
+
+	@media (max-width: 480px) {
+		font-size: 18px;
+	}
 `;
 
 const Remove = styled.div`
@@ -51,6 +61,7 @@ const TodoItemBlock = styled.div`
 	padding-top: 10px;
 	padding-bottom: 10px;
 
+	/* 아이템 블록 hover 시, remove 아이콘 보여주기 */
 	&:hover {
 		${Remove} {
 			opacity: 1;

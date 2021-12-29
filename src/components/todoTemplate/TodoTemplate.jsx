@@ -6,7 +6,7 @@ import { FaPlus } from 'react-icons/fa';
 const Container = styled.div`
 	margin-top: 30px;
 	width: 40%;
-	max-width: 600px;
+	max-width: 540px;
 	height: 75vh;
 	max-height: 800px;
 	position: relative;
@@ -18,12 +18,13 @@ const Container = styled.div`
 
 	@media (max-width: 1000px) {
 		width: 60%;
-		height: 80vh;
+		height: 85vh;
 	}
 
 	@media (max-width: 480px) {
+		margin-top: 15px;
 		width: 95%;
-		height: 80vh;
+		height: 85vh;
 	}
 `;
 
