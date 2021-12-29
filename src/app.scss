@@ -1,3 +1,10 @@
+@import './global.scss';
+
 * {
 	font-family: 'Noto Sans KR', sans-serif;
+	overscroll-behavior: none;
+}
+
+body {
+	background-color: $themeColor;
 }

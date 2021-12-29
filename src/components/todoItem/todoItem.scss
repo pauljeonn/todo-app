@@ -1,3 +1,5 @@
+@import '../../global.scss';
+
 .todo-item {
 	display: flex;
 	align-items: center;
@@ -5,7 +7,7 @@
 	padding-bottom: 12px;
 
 	i {
-		color: green;
+		color: $themeColor;
 	}
 
 	&:hover {
@@ -18,7 +20,7 @@
 		width: 32px;
 		height: 32px;
 		border-radius: 16px;
-		border: 1px solid green;
+		border: 1px solid $themeColor;
 		font-size: 24px;
 		display: flex;
 		align-items: center;

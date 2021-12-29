@@ -3,29 +3,27 @@ import styled, { css } from 'styled-components';
 import { useTodoDispatch, useTodoNextId } from '../../TodoContext';
 
 const CircleButton = styled.div`
-	background: #0ca678;
+	background: #ff7f50;
 	z-index: 5;
 	cursor: pointer;
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	position: absolute;
-	left: 50%;
-	bottom: 0px;
+	right: -2%;
+	bottom: 8%;
 	transform: translate(-50%, 50%);
-
 	font-size: 45px;
 	color: white;
 	border-radius: 50%;
-
 	border: none;
 	outline: none;
+	box-shadow: 2px 2px 10px gray;
 
 	&:hover {
-		background: #a2e3cf;
+		background: #709ee4;
 	}
 
 	&:active {
@@ -58,8 +56,7 @@ const InsertFormPositioner = styled.div`
 
 const InsertForm = styled.form`
 	background: lightgray;
-	padding: 32px;
-	padding-bottom: 72px;
+	padding: 4%;
 	border-bottom-left-radius: 16px;
 	border-bottom-right-radius: 16px;
 	border-top: 1px solid gray;
@@ -69,7 +66,7 @@ const Input = styled.input`
 	padding: 12px;
 	border-radius: 4px;
 	border: 1px solid gray;
-	width: 100%;
+	width: 85%;
 	outline: none;
 	font-size: 18px;
 	box-sizing: border-box;

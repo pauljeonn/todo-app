@@ -1,13 +1,15 @@
+@import '../../global.scss';
+
 .todo-head {
-	padding-top: 50px;
+	padding-top: 35px;
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-bottom: 25px;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid black;
 
 	h1 {
 		margin: 0;
 		font-size: 36px;
-		color: #0ca678;
+		color: $themeColor;
 	}
 }

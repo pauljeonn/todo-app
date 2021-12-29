@@ -7,7 +7,7 @@ import './todoList.scss';
 const TodoListBlock = styled.div`
 	flex: 1;
 	padding: 20px 32px;
-	padding-bottom: 48px;
+	padding-bottom: 88px;
 	overflow-y: auto;
 `;
 
