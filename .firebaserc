@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "todolist-41d4a"
-  }
+    "default": "todolist-41d4a",
+    "toodoo": "pauljeonn-todo"
+  },
+  "targets": {}
 }
