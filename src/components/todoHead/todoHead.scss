@@ -1,15 +1,23 @@
 @import '../../global.scss';
 
 .todo-head {
-	padding-top: 35px;
-	padding-left: 30px;
+	padding-top: 30px;
+	padding-left: 35px;
 	padding-right: 30px;
-	padding-bottom: 25px;
-	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	// margin: 0 auto;
 
 	h1 {
 		margin: 0;
-		font-size: 36px;
+		font-size: 40px;
 		color: $themeColor;
+	}
+
+	.todo-left {
+		margin-top: 15px;
+		margin-left: 5px;
+		font-size: 18px;
 	}
 }

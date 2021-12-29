@@ -3,11 +3,11 @@ import styled, { css } from 'styled-components';
 import { useTodoDispatch } from '../../TodoContext';
 
 const CheckCircle = styled.div`
-	width: 32px;
-	height: 32px;
+	width: 30px;
+	height: 30px;
 	border-radius: 50%;
 	border: 2px solid #ff7f50;
-	font-size: 24px;
+	font-size: 22px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -41,15 +41,15 @@ const Remove = styled.div`
 	font-size: 24px;
 	cursor: pointer;
 	&:hover {
-		color: red;
+		color: #ff7f50;
 	}
 `;
 
 const TodoItemBlock = styled.div`
 	display: flex;
 	align-items: center;
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 
 	&:hover {
 		${Remove} {
@@ -58,7 +58,7 @@ const TodoItemBlock = styled.div`
 	}
 `;
 
-const TodoItem = ({ id, done, text }) => {
+const TodoItem = ({ id, done, text, isLog }) => {
 	const dispatch = useTodoDispatch();
 
 	const onToggle = () =>
@@ -73,17 +73,30 @@ const TodoItem = ({ id, done, text }) => {
 			id,
 		});
 
-	return (
-		<TodoItemBlock>
-			<CheckCircle done={done} onClick={onToggle}>
-				{done && <i className="fas fa-check"></i>}
-			</CheckCircle>
-			<Text done={done}>{text}</Text>
-			<Remove onClick={onRemove}>
-				<i className="fas fa-trash"></i>
-			</Remove>
-		</TodoItemBlock>
-	);
+	// 완료된 일과 남은 할일 분리해서 보여주기
+	return !isLog
+		? !done && (
+				<TodoItemBlock>
+					<CheckCircle done={done} onClick={onToggle}>
+						{done && <i className="fas fa-check"></i>}
+					</CheckCircle>
+					<Text done={done}>{text}</Text>
+					<Remove onClick={onRemove}>
+						<i className="fas fa-trash"></i>
+					</Remove>
+				</TodoItemBlock>
+		  )
+		: done && (
+				<TodoItemBlock>
+					<CheckCircle done={done} onClick={onToggle}>
+						{done && <i className="fas fa-check"></i>}
+					</CheckCircle>
+					<Text done={done}>{text}</Text>
+					<Remove onClick={onRemove}>
+						<i className="fas fa-trash"></i>
+					</Remove>
+				</TodoItemBlock>
+		  );
 };
 
 export default TodoItem;

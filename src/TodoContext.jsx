@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext, useRef } from 'react';
 
-const initialTodos = [
+const todos = [
 	{
 		id: 1,
 		text: '스트레칭 30분 하기',
@@ -43,7 +43,7 @@ const TodoDispatchContext = createContext();
 const TodoNextIdContext = createContext();
 
 export function TodoProvider({ children }) {
-	const [state, dispatch] = useReducer(todoReducer, initialTodos);
+	const [state, dispatch] = useReducer(todoReducer, todos);
 	const nextId = useRef(5);
 
 	return (

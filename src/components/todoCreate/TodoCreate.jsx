@@ -3,11 +3,7 @@ import styled, { css } from 'styled-components';
 import { useTodoDispatch, useTodoNextId } from '../../TodoContext';
 
 const CircleButton = styled.div`
-<<<<<<< HEAD
 	background: #ff7f50;
-=======
-	background: #2473e7;
->>>>>>> df949c2c14ab2c1d25bb04389dffc0f927f83549
 	z-index: 5;
 	cursor: pointer;
 	width: 60px;
