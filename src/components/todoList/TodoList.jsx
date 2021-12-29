@@ -42,7 +42,13 @@ const TodoList = () => {
 	return (
 		<TodoListContainer>
 			<TodoToggle isLog={isLog} onClick={toggleLog}>
-				{isLog ? <FaArrowLeft /> : '완료 목록 보기'}
+				{isLog ? (
+					<>
+						<FaArrowLeft />
+					</>
+				) : (
+					'완료 목록 보기'
+				)}
 			</TodoToggle>
 			<TodoListBlock>
 				{todos.map((todo) => (

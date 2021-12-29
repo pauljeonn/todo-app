@@ -34,7 +34,7 @@ function App() {
 					<TodoTemplate>
 						<TodoHead />
 						<TodoList />
-						<TodoCreate />
+						{/* <TodoCreate /> */}
 					</TodoTemplate>
 				</Container>
 			</TodoProvider>
